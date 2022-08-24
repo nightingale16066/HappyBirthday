@@ -107,6 +107,7 @@ button {
   font-size: 18px;
   color: #FFFFFF;
   margin-right: 30px;
+  transition: opacity 0.2s ease-in;
 }
 .women .header__button-change{
   background: #C300C7;
@@ -117,6 +118,46 @@ button {
 .header__button-change:last-child {
   margin-right: 0;
 }
+.header__button-change:hover {
+  opacity: .7;
+}
+.men .header__button-change:active,
+.men .footer__social:active
+{
+  background: #1128b2;
+  opacity: 1;
+}
+
+.header__button-gender:hover {
+  background-color: #fafafa;
+}
+.men .header__button-gender:active {
+  border-color: grey;
+  border-width: 2px;
+}
+.women .header__button-gender:active {
+  border-color: grey;
+  border-width: 2px;
+}
+.women .header__button-change:active,
+.women .footer__social:active
+{
+  background: #920095;
+  opacity: 1;
+}
+
+.men .header__button-change:focus
+{
+  border: solid 2px#0b1b77;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.women .header__button-change:focus
+{
+  border: solid 2px#820085;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
 .header__button-gender {
   width: 57px;
   height: 57px;
@@ -144,6 +185,7 @@ button {
 .women .header__button-gender_women {
   border-color: #C300C7;
 }
+
 .card {
   flex-grow: 1;
   margin: 24px 0;
@@ -196,6 +238,14 @@ button {
   display: flex;
   gap: 16px;
 }
+
+.footer__social {
+  transition: 0.3s ease-in;
+}
+.footer__social:hover {
+  opacity: .7;
+}
+
 
 .men path {
   fill: #1178B2;
