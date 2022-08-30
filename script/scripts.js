@@ -5,6 +5,7 @@ const cardImage = document.querySelector('.card__img');
 const cardText = document.querySelector('.card__text');
 const buttonText = document.querySelector('.header__button-change_text');
 const buttonImage = document.querySelector('.header__button-change_image');
+const cardWrapper = document.querySelector('.card__wrapper');
 
 
 const state = {
@@ -73,8 +74,19 @@ const changeImage = () => {
 
 buttonMen.addEventListener('click', changeToMen);
 buttonWomen.addEventListener('click', changeToWomen);
-
 buttonText.addEventListener('click', changeText);
 buttonImage.addEventListener('click', changeImage);
 
 getDataToCard();
+
+cardWrapper.addEventListener('dblclick', () => {
+  const newWindow = window.open('', '', `width=840, height=600, 
+    top=${(screen.height / 2) - 600 /2},
+    left=${(screen.width / 2) - 840 /2}`);
+
+  html2canvas(cardWrapper).then((canvas) => {
+    canvas.style.maxWidth = '100%';
+    canvas.style.height = 'auto';
+    newWindow.document.body.prepend(canvas);
+  })
+})
